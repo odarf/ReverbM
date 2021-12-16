@@ -14,38 +14,6 @@ using namespace std;
 
 modeling::modeling() {}
 
-QVector<double> modeling::linearIncrement(int length, double k){
-    QVector<double> linearInc(length);
-    for(int x = 0; x<length; x++){
-        linearInc[x] = -k * x;
-    }
-    return linearInc;
-}
-
-QVector<double> modeling::linearDecrement(int length, double k){
-    QVector<double> linearDec(length);
-    for(int x = 0; x<length; x++){
-        linearDec[x] = k * x + length;
-    }
-    return linearDec;
-}
-
-QVector<double> modeling::exponentialIncrement(int length, double alpha, double beta){
-    QVector<double> exponentialInc(length);
-    for(int x = 0; x<length; x++){
-        exponentialInc[x] = beta * exp(-alpha * x);
-    }
-    return exponentialInc;
-}
-
-QVector<double> modeling::exponentialDecrement(int length, double alpha, double beta){
-    QVector<double> exponentialDec(length);
-    for(int x = 0; x<length; x++){
-        exponentialDec[x] = beta * exp(alpha * x);
-    }
-    return exponentialDec;
-}
-
 float modeling::embedRandom(){
     int const max = 1;
     int const min = -1;
@@ -58,27 +26,6 @@ float modeling::randomGenerator(float coefficient){
     default_random_engine engine{random_device()()};
     uniform_real_distribution<float> distribution{left, right};
     return distribution(engine);
-}
-
-QVector<double> modeling::harmonic(int length, int amplitude, int frequency){
-    QVector<double> harmonic(length);
-    double delta_t = 0.001;
-    for(int x = 0; x<length; x++){
-        harmonic[x] = amplitude * sin(2 * 3.14 * frequency * x * delta_t);
-    }
-    return harmonic;
-}
-
-QVector<double> modeling::polyharmonic(int length, int amplitude[], int frequency[]){
-    QVector<double> polyharmonic(length);
-    for(int count=0; count<3; count++){
-        for(int i=0; i<5; i++){
-            for(int x=0; x<length; x++){
-                polyharmonic[x] += amplitude[count] * sin(2 * 3.14 * frequency[count] * x);// * delta_t);
-            }
-        }
-    }
-    return polyharmonic;
 }
 
 QVector<double> modeling::cardiogram(){

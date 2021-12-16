@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 5.0.1, 2021-11-29T19:54:17. -->
+<!-- Written by QtCreator 5.0.1, 2021-12-16T17:48:42. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -81,7 +81,14 @@
     <value type="QString" key="ClangTools.DiagnosticConfig">Builtin.DefaultTidyAndClazy</value>
     <value type="int" key="ClangTools.ParallelJobs">6</value>
     <valuelist type="QVariantList" key="ClangTools.SelectedDirs"/>
-    <valuelist type="QVariantList" key="ClangTools.SelectedFiles"/>
+    <valuelist type="QVariantList" key="ClangTools.SelectedFiles">
+     <value type="QString">D:/Users/madven/Documents/ReverbM/src/modeling.cpp</value>
+     <value type="QString">D:/Users/madven/Documents/ReverbM/src/inou.cpp</value>
+     <value type="QString">D:/Users/madven/Documents/ReverbM/src/main.cpp</value>
+     <value type="QString">D:/Users/madven/Documents/ReverbM/src/processing.cpp</value>
+     <value type="QString">D:/Users/madven/Documents/ReverbM/src/analysis.cpp</value>
+     <value type="QString">D:/Users/madven/Documents/ReverbM/src/mainwindow.cpp</value>
+    </valuelist>
     <valuelist type="QVariantList" key="ClangTools.SuppressedDiagnostics"/>
     <value type="bool" key="ClangTools.UseGlobalSettings">true</value>
    </valuemap>
@@ -237,8 +244,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/Users/madven/Documents/test2/src/test2.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Users/madven/Documents/test2/src/test2.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">test22</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/Users/madven/Documents/ReverbM/src/test2.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Users/madven/Documents/ReverbM/src/test2.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>

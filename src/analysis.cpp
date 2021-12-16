@@ -184,7 +184,7 @@ QVector<double> analysis::calculateFrequency(double delta_t, int N){
 
     //delta_t = 1/(2*fгр) = 1/fд   //Sec
     double f_gr = 1/(2 * delta_t); //Hz
-    double Fn = f_gr;              //Hz Fn = N/2
+    //double Fn = f_gr;              //Hz Fn = N/2
     double delta_f = f_gr/(N/2);   //Hz
     for(int i = 0; i<N/2; i++) { frequency.append(i*delta_f); }
     return frequency;
