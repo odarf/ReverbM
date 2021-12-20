@@ -12,10 +12,6 @@
 #include <QValueAxis>
 #include <QChart>
 
-#include <QSound>
-#include <QMediaPlayer>
-#include <QMediaPlaylist>
-
 #include <QChartView>
 #include <QtCharts>
 #include <QtWidgets>
