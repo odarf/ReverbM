@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1029</width>
-    <height>846</height>
+    <height>650</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,13 +19,13 @@
   <property name="minimumSize">
    <size>
     <width>1029</width>
-    <height>846</height>
+    <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>1029</width>
-    <height>846</height>
+    <height>650</height>
    </size>
   </property>
   <property name="font">
@@ -43,7 +43,7 @@
    <bool>false</bool>
   </property>
   <property name="windowTitle">
-   <string>МОЭД</string>
+   <string>Reverb</string>
   </property>
   <property name="iconSize">
    <size>
@@ -62,7 +62,7 @@
     <property name="geometry">
      <rect>
       <x>940</x>
-      <y>780</y>
+      <y>560</y>
       <width>80</width>
       <height>21</height>
      </rect>
@@ -74,409 +74,36 @@
      <string>Plot</string>
     </property>
    </widget>
-   <widget class="QDoubleSpinBox" name="sbCoeff">
+   <widget class="QCustomPlot" name="plotInputWave" native="true">
     <property name="geometry">
      <rect>
-      <x>870</x>
-      <y>780</y>
-      <width>55</width>
-      <height>23</height>
+      <x>20</x>
+      <y>50</y>
+      <width>501</width>
+      <height>151</height>
      </rect>
     </property>
    </widget>
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="QCustomPlot" name="widget_2" native="true">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>1024</width>
-      <height>768</height>
+      <x>20</x>
+      <y>240</y>
+      <width>501</width>
+      <height>151</height>
      </rect>
     </property>
-    <property name="currentIndex">
-     <number>5</number>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>16</width>
-      <height>16</height>
-     </size>
-    </property>
-    <widget class="QWidget" name="tabTask10">
-     <attribute name="title">
-      <string>Task 10</string>
-     </attribute>
-     <widget class="QCustomPlot" name="graphFromFile" native="true">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>40</y>
-        <width>990</width>
-        <height>210</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graphFourierAmplitude" native="true">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>280</y>
-        <width>990</width>
-        <height>210</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graphFourierSpectrum" native="true">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>520</y>
-        <width>990</width>
-        <height>210</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_57">
-      <property name="geometry">
-       <rect>
-        <x>485</x>
-        <y>17</y>
-        <width>40</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Сигнал</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_58">
-      <property name="geometry">
-       <rect>
-        <x>484</x>
-        <y>257</y>
-        <width>40</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Спектр</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_59">
-      <property name="geometry">
-       <rect>
-        <x>455</x>
-        <y>497</y>
-        <width>100</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Спектр (окно 91%)</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tabTask11">
-     <attribute name="title">
-      <string>Task 11</string>
-     </attribute>
-     <widget class="QCustomPlot" name="graphCardio" native="true">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>200</y>
-        <width>880</width>
-        <height>340</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_60">
-      <property name="geometry">
-       <rect>
-        <x>480</x>
-        <y>180</y>
-        <width>80</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Кардиограмма</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tabTask12">
-     <attribute name="title">
-      <string>Task 12</string>
-     </attribute>
-     <widget class="QCustomPlot" name="graphLPF" native="true">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>490</width>
-        <height>330</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graphPF" native="true">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>370</y>
-        <width>490</width>
-        <height>330</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graphRF" native="true">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>370</y>
-        <width>490</width>
-        <height>330</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graphHPF" native="true">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>20</y>
-        <width>490</width>
-        <height>330</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tabTask13">
-     <attribute name="title">
-      <string>Task 13</string>
-     </attribute>
-     <widget class="QCustomPlot" name="graphAfcLp" native="true">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>990</width>
-        <height>170</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graphAfcHp" native="true">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>190</y>
-        <width>990</width>
-        <height>170</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graphAfcPf" native="true">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>380</y>
-        <width>990</width>
-        <height>170</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graphAfcRf" native="true">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>560</y>
-        <width>990</width>
-        <height>170</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tabTask14">
-     <attribute name="title">
-      <string>Task 14</string>
-     </attribute>
-     <widget class="QCustomPlot" name="graphFilteredLp" native="true">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>500</width>
-        <height>225</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graphFilteredLpAmpl" native="true">
-      <property name="geometry">
-       <rect>
-        <x>510</x>
-        <y>10</y>
-        <width>500</width>
-        <height>225</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graphFilteredHpAmpl" native="true">
-      <property name="geometry">
-       <rect>
-        <x>510</x>
-        <y>260</y>
-        <width>500</width>
-        <height>225</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graphFilteredHp" native="true">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>260</y>
-        <width>500</width>
-        <height>225</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graphFilteredPfAmpl" native="true">
-      <property name="geometry">
-       <rect>
-        <x>510</x>
-        <y>510</y>
-        <width>500</width>
-        <height>225</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graphFilteredPf" native="true">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>510</y>
-        <width>500</width>
-        <height>225</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tabTask15">
-     <attribute name="title">
-      <string>Wav File</string>
-     </attribute>
-     <widget class="QCustomPlot" name="graphWavFile" native="true">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>10</y>
-        <width>1010</width>
-        <height>221</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graphWavFileFourier" native="true">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>260</y>
-        <width>1010</width>
-        <height>221</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graphWavFileLoud" native="true">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>500</y>
-        <width>1010</width>
-        <height>221</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tabTask16">
-     <attribute name="title">
-      <string>Страница</string>
-     </attribute>
-     <widget class="QCustomPlot" name="graph08_3" native="true">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>500</y>
-        <width>501</width>
-        <height>221</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graph08" native="true">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>501</width>
-        <height>221</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graph08_2" native="true">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>260</y>
-        <width>501</width>
-        <height>221</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graph08_5" native="true">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>260</y>
-        <width>501</width>
-        <height>221</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graph08_6" native="true">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>500</y>
-        <width>501</width>
-        <height>221</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCustomPlot" name="graph08_4" native="true">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>20</y>
-        <width>501</width>
-        <height>221</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
    </widget>
-   <widget class="QLabel" name="labelCI">
+   <widget class="QCustomPlot" name="plotReverbedWave" native="true">
     <property name="geometry">
      <rect>
-      <x>746</x>
-      <y>783</y>
-      <width>91</width>
-      <height>20</height>
+      <x>20</x>
+      <y>430</y>
+      <width>501</width>
+      <height>151</height>
      </rect>
     </property>
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
    </widget>
-   <zorder>tabWidget</zorder>
-   <zorder>pushButton</zorder>
-   <zorder>sbCoeff</zorder>
-   <zorder>labelCI</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
