@@ -7,7 +7,7 @@
 namespace endian_io
 {
   template <typename Word>
-  std::ostream& write_word( std::ostream& outs, Word value, unsigned size = sizeof( Word ) )
+  std::ostream& write_word( std::ostream& outs, Word value, unsigned size = sizeof(Word))
   {
     for (; size; --size, value >>= 8)
       outs.put( static_cast <char> (value & 0xFF) );
@@ -135,19 +135,27 @@ void inou::exportWave(QVector<double> inputdData, int samples_count, const char 
     write_word(fout,      4, 2 );
     write_word(fout,     16, 2 );
 
-    //size_t data_chunk_pos = fout.tellp();
+    size_t data_chunk_pos = fout.tellp();
     fout << "data----";
+
+    //-----------------------------------------------------------------
+
+    //-----------------------------------------------------------------
+
+
     write_word(fout, samples_count);
 
     for (int i = 0; i < samples_count; i++){ //i < samples_count;
         write_word(fout, (int)(inputdData[i]*volume), 2); //Volume
     }
 
-    /*size_t file_length = fout.tellp();
+    size_t file_length = fout.tellp();
+
     fout.seekp(data_chunk_pos + 4);
-    write_word(fout , file_length - data_chunk_pos + 8);
+    write_word(fout , file_length - data_chunk_pos + 8, 4);
+
     fout.seekp(0 + 4);
-    write_word(fout, file_length -8, 4);*/
+    write_word(fout, file_length -8, 4);
 
     fout.close();
 }

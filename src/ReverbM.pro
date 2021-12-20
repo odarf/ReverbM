@@ -18,6 +18,7 @@ SOURCES += \
     modeling.cpp \
     processing.cpp \
     qcustomplot.cpp \
+    reverberator.cpp
 
 
 HEADERS += \
@@ -27,6 +28,7 @@ HEADERS += \
     modeling.h \
     processing.h \
     qcustomplot.h \
+    reverberator.h
 
 
 FORMS += \

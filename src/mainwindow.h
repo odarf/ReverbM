@@ -5,6 +5,7 @@
 #include "analysis.h"
 #include <QMainWindow>
 #include <QtWidgets>
+#include <QMediaPlayer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,10 +17,19 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    float delay, decay, mixPercent;
     ~MainWindow();
+
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_delaySlider_valueChanged(int value);
+
+    void on_decaySlider_valueChanged(int value);
+
+    void on_dwSlider_valueChanged(int value);
+
 
 private:
     Ui::MainWindow *ui;

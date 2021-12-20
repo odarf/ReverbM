@@ -84,16 +84,6 @@
      </rect>
     </property>
    </widget>
-   <widget class="QCustomPlot" name="widget_2" native="true">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>240</y>
-      <width>501</width>
-      <height>151</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QCustomPlot" name="plotReverbedWave" native="true">
     <property name="geometry">
      <rect>
@@ -102,6 +92,190 @@
       <width>501</width>
       <height>151</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QSlider" name="delaySlider">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>220</y>
+      <width>160</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>20</number>
+    </property>
+    <property name="maximum">
+     <number>1000</number>
+    </property>
+    <property name="value">
+     <number>99</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="invertedAppearance">
+     <bool>false</bool>
+    </property>
+    <property name="invertedControls">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QSlider" name="decaySlider">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>250</y>
+      <width>160</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>29</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="dwSlider">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>280</y>
+      <width>160</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>50</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::NoTicks</enum>
+    </property>
+    <property name="tickInterval">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="playButtton">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>500</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Play</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="sbDelay">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>220</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>20</number>
+    </property>
+    <property name="maximum">
+     <number>1000</number>
+    </property>
+    <property name="value">
+     <number>99</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="sbDW">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>280</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>50</number>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="sbDecay">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>250</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="decimals">
+     <number>1</number>
+    </property>
+    <property name="minimum">
+     <double>1.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>100.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>29.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>220</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delay</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>250</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Decay</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>280</y>
+      <width>47</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Dry/Wet</string>
     </property>
    </widget>
   </widget>
