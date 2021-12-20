@@ -36,10 +36,10 @@ static const char* OUTPUT_WAV = "../Reverbed.wav";
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
-    connect(ui->delaySlider, &QSlider::valueChanged, [](){ui->});
-    connect();
-    connect();
-    connect();
+    ui->sbDecay->setValue(ui->decaySlider->value()/100.0f); //hack
+    connect(ui->sbDelay, SIGNAL(valueChanged(int)), ui->delaySlider, SLOT(setValue(int)));
+    connect(ui->sbDW, SIGNAL(valueChanged(int)), ui->dwSlider, SLOT(setValue(int)));
+
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -94,17 +94,23 @@ void MainWindow::on_pushButton_clicked(){
 
 void MainWindow::on_delaySlider_valueChanged(int value){
     delay = value/1.0f;
-    ui->labelDelay->setText(QString::number(delay));
+    ui->sbDelay->setValue(value);
 }
 
 
 void MainWindow::on_decaySlider_valueChanged(int value){
     decay = value/100.0f;
-    ui->labelDecay->setText(QString::number(decay));
+    ui->sbDecay->setValue(decay);
 }
 
 
 void MainWindow::on_dwSlider_valueChanged(int value){
     mixPercent = value;
-    ui->labelDW->setText(QString::number(mixPercent));
+    ui->sbDW->setValue(value);
 }
+
+void MainWindow::on_sbDecay_valueChanged(double arg1)
+{
+    ui->decaySlider->setValue((int)(arg1 * 100));
+}
+

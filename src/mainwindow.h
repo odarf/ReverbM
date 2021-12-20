@@ -31,6 +31,8 @@ private slots:
     void on_dwSlider_valueChanged(int value);
 
 
+    void on_sbDecay_valueChanged(double arg1);
+
 private:
     Ui::MainWindow *ui;
 };
