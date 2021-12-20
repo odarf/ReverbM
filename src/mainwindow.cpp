@@ -85,10 +85,7 @@ void MainWindow::on_pushButton_clicked(){
     min = analysis.minValue(reverbed);
     ui->plotReverbedWave->yAxis->setRange(min, max);
     ui->plotReverbedWave->replot();
-    inou().exportWave(reverbed, reverbed.length(), "../combRev.wav", 1);
-    clog << reverbed.length() << endl;
-    clog << wav.length() << endl;
-    inou().exportWave(wav, wav.length(), OUTPUT_WAV, 1);
+    inou().exportWave(reverbed, reverbed.length(), OUTPUT_WAV, 1);
 }
 
 
@@ -97,12 +94,10 @@ void MainWindow::on_delaySlider_valueChanged(int value){
     ui->sbDelay->setValue(value);
 }
 
-
 void MainWindow::on_decaySlider_valueChanged(int value){
     decay = value/100.0f;
     ui->sbDecay->setValue(decay);
 }
-
 
 void MainWindow::on_dwSlider_valueChanged(int value){
     mixPercent = value;

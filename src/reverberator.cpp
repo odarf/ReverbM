@@ -47,7 +47,8 @@ QVector<double> Reverberator::combFilter(QVector<double> samples, int samplesLen
 }
 
 QVector<double> Reverberator::allPassFilter(QVector<double> samples, int samplesLength, float sampleRate){
-    int delaySamples = (int)((float)89.27f * (sampleRate/1000));
+    //int delaySamples = (int)((float)89.27f * (sampleRate/1000));
+    int delaySamples = (int)((float)89.27f * 22.050f);
     QVector<double> allPassFilterSamples(samplesLength);
     float decayFactor = 0.131f;
 
