@@ -1,11 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "processing.h"
 #include "analysis.h"
 #include <QMainWindow>
 #include <QtWidgets>
-#include <QMediaPlayer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -29,7 +27,6 @@ private slots:
     void on_decaySlider_valueChanged(int value);
 
     void on_dwSlider_valueChanged(int value);
-
 
     void on_sbDecay_valueChanged(double arg1);
 

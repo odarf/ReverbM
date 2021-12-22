@@ -15,8 +15,6 @@ SOURCES += \
     inou.cpp \
     main.cpp \
     mainwindow.cpp \
-    modeling.cpp \
-    processing.cpp \
     qcustomplot.cpp \
     reverberator.cpp
 
@@ -25,8 +23,6 @@ HEADERS += \
     analysis.h \
     inou.h \
     mainwindow.h \
-    modeling.h \
-    processing.h \
     qcustomplot.h \
     reverberator.h
 

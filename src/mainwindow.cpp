@@ -1,34 +1,20 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "modeling.h"
 #include "analysis.h"
 #include "reverberator.h"
 #include "inou.h"
-#include "qmath.h"
-
-#include <iostream>
-#include <QLogValueAxis>
-#include <QLineSeries>
-#include <QValueAxis>
-#include <QChart>
-
-#include <QChartView>
-#include <QtCharts>
-#include <QtWidgets>
-#include <QtWidgets/QHBoxLayout>
-#include <QHBoxLayout>
-#include <cstdlib>
-
-#include <math.h>
-#include <time.h>
-#include <random>
-
-#include <fstream>
 
 using namespace std;
 
 static const char* INPUT_WAV = "../soundInput.wav";
 static const char* OUTPUT_WAV = "../Reverbed.wav";
+
+template<typename T> vector<T> arrange(T start, T stop, T step = 1) {
+    vector<T> values;
+    for (T value = start; value < stop; value += step)
+        values.push_back(value);
+    return values;
+}
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
@@ -41,11 +27,10 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
 MainWindow::~MainWindow() { delete ui; }
 
 void MainWindow::on_pushButton_clicked(){
-    modeling  modeling;
-    processing processing;
     analysis analysis;
-    QVector<double> x, reverb, wavReverbed;
+    QVector<double> x;
     double max, min;
+    double dt = 1/22.050;
 
     QVector<double> wav = inou().loadWave(INPUT_WAV);
 
@@ -59,16 +44,7 @@ void MainWindow::on_pushButton_clicked(){
     ui->plotInputWave->yAxis->setRange(min, max);
     ui->plotInputWave->replot();
 
-    int delay = 500;
-    int delaySamples = (int)((float)delay * 22.050f);
-    float decay = 0.5f;
-
-    for (int i(0); i<wav.length(); i++) {
-        wav[i+delaySamples] += (short)((float)wav[i] * decay);
-    }
-
     QVector<double> reverbed = Reverberator().reverb(wav, this->delay, this->decay, this->mixPercent);
-    //QVector<double> reverbed = Reverberator().reverb(wav, 78.9f, 0.45f, 50);
     double maxelem = analysis.maxValue(wav);
     for (int i = 0; i<reverbed.length(); i++) {
         reverbed[i] *= maxelem;
@@ -82,8 +58,45 @@ void MainWindow::on_pushButton_clicked(){
     ui->plotReverbedWave->yAxis->setRange(min, max);
     ui->plotReverbedWave->replot();
     inou().exportWave(reverbed, reverbed.length(), OUTPUT_WAV, 1);
-}
+    inou().exportWave(wav, wav.length(), "../test.wav", 1);
 
+    wav = analysis.fourierAmplitude(wav);
+    vector<double> temp = arrange<double>(0, (double)wav.length() * dt, dt);
+    QVector<double> arranged;
+
+    for (int i = 0; i<temp.size(); i++) {
+        arranged.append(temp[i]);
+    }
+
+    ui->plotInputFour->addGraph();
+    ui->plotInputFour->graph(0)->setData(arranged, wav);
+    ui->plotInputFour->xAxis->setRange(0, wav.length());
+    ui->plotInputFour->setInteraction(QCP::iRangeZoom,true);
+    ui->plotInputFour->setInteraction(QCP::iRangeDrag,true);
+    max = analysis.maxValue(wav);
+    min = analysis.minValue(wav);
+    ui->plotInputFour->yAxis->setRange(min, max);
+    ui->plotInputFour->replot();
+
+    reverbed = analysis.fourierAmplitude(reverbed);
+    temp = arrange<double>(0, (double)reverbed.length() * dt, dt);
+    arranged.clear();
+
+    for (int i = 0; i<temp.size(); i++) {
+        arranged.append(temp[i]);
+    }
+
+    ui->plotReverbedFour->addGraph();
+    ui->plotReverbedFour->graph(0)->setData(arranged, reverbed);
+    ui->plotReverbedFour->xAxis->setRange(0, reverbed.length());
+    ui->plotReverbedFour->setInteraction(QCP::iRangeZoom,true);
+    ui->plotReverbedFour->setInteraction(QCP::iRangeDrag,true);
+    max = analysis.maxValue(reverbed);
+    min = analysis.minValue(reverbed);
+    ui->plotReverbedFour->yAxis->setRange(min, max);
+    ui->plotReverbedFour->replot();
+
+}
 
 void MainWindow::on_delaySlider_valueChanged(int value){
     delay = value/1.0f;

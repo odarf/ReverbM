@@ -1,5 +1,4 @@
 #include "reverberator.h"
-#include "inou.h"
 
 Reverberator::Reverberator(){ }
 
@@ -18,10 +17,10 @@ QVector<double> Reverberator::reverb(QVector<double> samples, float delay, float
         outputComb[i] = combFilterSamples1[i] + combFilterSamples2[i] + combFilterSamples3[i] + combFilterSamples4[i];
     }
 
-    /*combFilterSamples1.clear();
+    combFilterSamples1.clear();
     combFilterSamples2.clear();
     combFilterSamples3.clear();
-    combFilterSamples4.clear();*/
+    combFilterSamples4.clear();
 
 
     QVector<double> mix(length);
@@ -30,7 +29,6 @@ QVector<double> Reverberator::reverb(QVector<double> samples, float delay, float
     }
 
     QVector<double> allPassFilterSamples1 = allPassFilter(mix, length, sampleRate);
-    //QVector<double> allPassFilterSamples1 = allPassFilter(samples, length, sampleRate);
     QVector<double> allPassFilterSamples2 = allPassFilter(allPassFilterSamples1, length, sampleRate);
 
     return allPassFilterSamples2;
@@ -63,8 +61,6 @@ QVector<double> Reverberator::allPassFilter(QVector<double> samples, int samples
             allPassFilterSamples[i] += decayFactor * allPassFilterSamples[i+20-delaySamples];
         }
     }
-
-
     //Нормализация до 1
     float value = allPassFilterSamples[0];
     float max = 0.0f;

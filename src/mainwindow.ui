@@ -7,11 +7,11 @@
     <x>0</x>
     <y>0</y>
     <width>1029</width>
-    <height>650</height>
+    <height>508</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Maximum">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -19,13 +19,13 @@
   <property name="minimumSize">
    <size>
     <width>1029</width>
-    <height>0</height>
+    <height>508</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>1029</width>
-    <height>650</height>
+    <height>508</height>
    </size>
   </property>
   <property name="font">
@@ -62,7 +62,7 @@
     <property name="geometry">
      <rect>
       <x>940</x>
-      <y>560</y>
+      <y>460</y>
       <width>80</width>
       <height>21</height>
      </rect>
@@ -71,14 +71,14 @@
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="text">
-     <string>Plot</string>
+     <string>Go</string>
     </property>
    </widget>
    <widget class="QCustomPlot" name="plotInputWave" native="true">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>50</y>
+      <x>10</x>
+      <y>30</y>
       <width>501</width>
       <height>151</height>
      </rect>
@@ -87,8 +87,8 @@
    <widget class="QCustomPlot" name="plotReverbedWave" native="true">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>430</y>
+      <x>10</x>
+      <y>210</y>
       <width>501</width>
       <height>151</height>
      </rect>
@@ -97,8 +97,8 @@
    <widget class="QSlider" name="delaySlider">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>220</y>
+      <x>790</x>
+      <y>370</y>
       <width>160</width>
       <height>20</height>
      </rect>
@@ -125,8 +125,8 @@
    <widget class="QSlider" name="decaySlider">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>250</y>
+      <x>790</x>
+      <y>400</y>
       <width>160</width>
       <height>20</height>
      </rect>
@@ -147,8 +147,8 @@
    <widget class="QSlider" name="dwSlider">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>280</y>
+      <x>790</x>
+      <y>430</y>
       <width>160</width>
       <height>20</height>
      </rect>
@@ -169,24 +169,11 @@
      <number>0</number>
     </property>
    </widget>
-   <widget class="QPushButton" name="playButtton">
-    <property name="geometry">
-     <rect>
-      <x>550</x>
-      <y>500</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Play</string>
-    </property>
-   </widget>
    <widget class="QSpinBox" name="sbDelay">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>220</y>
+      <x>960</x>
+      <y>370</y>
       <width>50</width>
       <height>20</height>
      </rect>
@@ -204,8 +191,8 @@
    <widget class="QSpinBox" name="sbDW">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>280</y>
+      <x>960</x>
+      <y>430</y>
       <width>50</width>
       <height>20</height>
      </rect>
@@ -220,8 +207,8 @@
    <widget class="QDoubleSpinBox" name="sbDecay">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>250</y>
+      <x>960</x>
+      <y>400</y>
       <width>50</width>
       <height>20</height>
      </rect>
@@ -245,8 +232,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>220</y>
+      <x>740</x>
+      <y>370</y>
       <width>31</width>
       <height>20</height>
      </rect>
@@ -258,8 +245,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>250</y>
+      <x>740</x>
+      <y>400</y>
       <width>31</width>
       <height>20</height>
      </rect>
@@ -271,14 +258,86 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>280</y>
+      <x>740</x>
+      <y>430</y>
       <width>47</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
      <string>Dry/Wet</string>
+    </property>
+   </widget>
+   <widget class="QCustomPlot" name="plotInputFour" native="true">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>30</y>
+      <width>501</width>
+      <height>151</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QCustomPlot" name="plotReverbedFour" native="true">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>210</y>
+      <width>501</width>
+      <height>151</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>195</x>
+      <y>190</y>
+      <width>130</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Сигнал с реверберацией</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>221</x>
+      <y>10</y>
+      <width>80</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Входной сигнал</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>666</x>
+      <y>10</y>
+      <width>210</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Амплитудный спектр входного сигнала</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>645</x>
+      <y>190</y>
+      <width>250</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Амплитудный спектр сигнала с реверберацией</string>
     </property>
    </widget>
   </widget>
