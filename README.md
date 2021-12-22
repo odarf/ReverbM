@@ -1,1 +1,1 @@
-# ReverbM
+# Schroeder's reverberator
